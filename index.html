@@ -23,96 +23,65 @@
             color: white;
             margin: 10px;
             text-decoration: none;
+            cursor: pointer;
         }
-        .product-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .product {
-            background: white;
+        .content {
+            display: none;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 300px;
         }
-        img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-        p {
-            color: #555;
-        }
-        .buy-button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
+        .active {
+            display: block;
         }
     </style>
+    <script>
+        function showPage(pageId) {
+            var pages = document.querySelectorAll('.content');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
 </head>
 <body>
     <img src="/mnt/data/A_sleek_and_modern_logo_for_'AutoGadgets_Hub'._The.png" alt="AutoGadgets Hub Logo" width="200">
     
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">Over ons</a>
-        <a href="#team">Wie zijn wij?</a>
-        <a href="#faq">FAQ</a>
-        <a href="#products">Producten</a>
-        <a href="#contact">Contact</a>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('about')">Over ons</a>
+        <a onclick="showPage('team')">Wie zijn wij?</a>
+        <a onclick="showPage('faq')">FAQ</a>
+        <a onclick="showPage('products')">Producten</a>
+        <a onclick="showPage('contact')">Contact</a>
     </nav>
-
-    <section id="home">
+    
+    <div id="home" class="content active">
         <h1>Welkom bij AutoGadgets Hub</h1>
         <p>Ontdek de nieuwste snufjes voor in je auto!</p>
-    </section>
-
-    <section id="about">
-        <h2>Over ons</h2>
+    </div>
+    
+    <div id="about" class="content">
+        <h1>Over ons</h1>
         <p>AutoGadgets Hub is dé plek voor innovatieve en handige auto-accessoires.</p>
-    </section>
-
-    <section id="team">
-        <h2>Wie zijn wij?</h2>
+    </div>
+    
+    <div id="team" class="content">
+        <h1>Wie zijn wij?</h1>
         <p>Ons team bestaat uit autoliefhebbers die de beste gadgets selecteren voor een betere rijervaring.</p>
-    </section>
-
-    <section id="faq">
-        <h2>FAQ</h2>
+    </div>
+    
+    <div id="faq" class="content">
+        <h1>FAQ</h1>
         <p><strong>Vraag:</strong> Hoe kan ik een product bestellen?<br><strong>Antwoord:</strong> Momenteel tonen we alleen producten en verkopen we niets.</p>
-    </section>
-
-    <section id="products" class="product-container">
-        <div class="product">
-            <img src="https://example.com/dashcam.jpg" alt="Smart Dashcam Pro">
-            <h2>Smart Dashcam Pro</h2>
-            <p>Een geavanceerde dashcam met AI-detectie die automatisch ongelukken opneemt en waarschuwingen geeft.</p>
-            <a href="#" class="buy-button">Koop nu</a>
-        </div>
-        <div class="product">
-            <img src="https://example.com/wireless-charger.jpg" alt="Draadloze Auto-oplader">
-            <h2>Draadloze Auto-oplader met MagSafe</h2>
-            <p>Een magnetische telefoonhouder en oplader die je smartphone veilig op zijn plaats houdt tijdens het rijden.</p>
-            <a href="#" class="buy-button">Koop nu</a>
-        </div>
-        <div class="product">
-            <img src="https://example.com/led-lighting.jpg" alt="LED Ambiance Verlichting">
-            <h2>LED Ambiance Verlichting</h2>
-            <p>RGB LED-strips voor in de auto, waarmee je de binnenverlichting kunt aanpassen aan je stemming.</p>
-            <a href="#" class="buy-button">Koop nu</a>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
+    </div>
+    
+    <div id="products" class="content">
+        <h1>Producten</h1>
+        <p>Bekijk onze nieuwste auto-accessoires!</p>
+    </div>
+    
+    <div id="contact" class="content">
+        <h1>Contact</h1>
         <p>Email: info@autogadgetshub.com</p>
         <p>Telefoon: 012-3456789</p>
-    </section>
+    </div>
 </body>
 </html>
- 
