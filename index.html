@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoGadgets Hub</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
             background-color: #1a1a1a;
             color: white;
@@ -60,102 +62,19 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .cart-container {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            background: #2a2a2a;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-            width: 300px;
-            text-align: left;
-            display: none;
-        }
-        .cart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .cart-icon {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #007BFF;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-        }
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #555;
-            padding: 5px 0;
-        }
-        .remove-button {
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 5px;
-            cursor: pointer;
-        }
     </style>
     <script>
-        let cart = [];
-
         function showPage(pageId) {
             document.querySelectorAll('.content').forEach(page => page.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-        }
-
-        function toggleCart() {
-            let cartElement = document.getElementById("cart-container");
-            let cartIcon = document.getElementById("cart-icon");
-            if (cartElement.style.display === "none" || cartElement.style.display === "") {
-                cartElement.style.display = "block";
-                cartIcon.style.display = "none";
-            } else {
-                cartElement.style.display = "none";
-                cartIcon.style.display = "block";
-            }
-        }
-
-        function addToCart(productName) {
-            let item = cart.find(p => p.name === productName);
-            if (item) {
-                item.quantity++;
-            } else {
-                cart.push({ name: productName, quantity: 1 });
-            }
-            updateCart();
-            document.getElementById("cart-container").style.display = "block";
-            document.getElementById("cart-icon").style.display = "none";
-        }
-
-        function removeFromCart(productName) {
-            cart = cart.filter(p => p.name !== productName);
-            updateCart();
-        }
-
-        function updateCart() {
-            let cartElement = document.getElementById("cart-items");
-            if (cart.length === 0) {
-                cartElement.innerHTML = "<p>Geen producten toegevoegd.</p>";
-            } else {
-                cartElement.innerHTML = cart.map(item => `
-                    <div class='cart-item'>
-                        <span>${item.name} (x${item.quantity})</span>
-                        <button class='remove-button' onclick="removeFromCart('${item.name}')">X</button>
-                    </div>
-                `).join("");
+            let targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
             }
         }
     </script>
 </head>
 <body>
-    <img src="/mnt/data/A_sleek_and_modern_logo_for_'AutoGadgets_Hub'._The.png" alt="AutoGadgets Hub Logo" width="200">
+    <img src="https://raw.githubusercontent.com/Blf12345/AutoGadgets-Hub/refs/heads/main/88FA9EF7-38B9-4FC7-B766-E69B8AF9B30B.webp" alt="AutoGadgets Hub Logo" width="200">
     
     <nav>
         <a onclick="showPage('home')">Home</a>
@@ -166,37 +85,63 @@
         <a onclick="showPage('contact')">Contact</a>
     </nav>
     
-    <div class="cart-container" id="cart-container">
-        <div class="cart-header">
-            <h3>Winkelwagen</h3>
-            <button class="remove-button" onclick="toggleCart()">X</button>
-        </div>
-        <div id="cart-items">
-            <p>Geen producten toegevoegd.</p>
-        </div>
+    <div id="home" class="content active">
+        <h1>Welkom bij AutoGadgets Hub</h1>
+        <p>Niet blij met uw skere auto? Bij ons kunt u terecht voor leuke auto-gadgets! Maak ze aangenamer met bijvoorbeeld verlichting, een dashcam, en nog veel meer, allemaal voor een aanvaardbare prijs!</p>
     </div>
-
-    <div class="cart-icon" id="cart-icon" onclick="toggleCart()">🛒</div>
-
-    <div id="products" class="content active">
+    
+    <div id="about" class="content">
+        <h1>Over ons</h1>
+        <p>AutoGadgets Hub biedt de nieuwste technologieën en accessoires voor jouw auto. Van een simpele dashcam tot sfeervolle autoverlichting, bij ons vindt u alles. Topkwaliteit voor realistische prijzen met een oog op de klant. Onze winkel biedt exact wat u nodig hebt. Met variabele leveringsopties zorgen we voor de ideale gelegenheid voor de klant.</p>
+    </div>
+    
+    <div id="team" class="content">
+        <h1>Wie zijn wij?</h1>
+        <p>Ons super-team heeft de afgelopen maanden speciaal voor u met hand en tand aan Autogadgets.com gewerkt. Met dank aan mister A. Soliman, die ons bijeen heeft gebracht. Onze promoter, mister I. Hernandez en tenslotte de marktheersers, heren O. Sigua en natuurlijk L. Bellefroid.<br><br>
+        Wij hopen u een informatieve en hulpvolle ervaring te bieden. U kunt ons ten alle tijden bereiken via het volgende nummer of email:<br>
+        <strong>+32 493 85 31</strong><br>
+        <strong>Autogadgets@help.com</strong></p>
+    </div>
+    
+    <div id="faq" class="content">
+        <h1>FAQ</h1>
+        <p><strong>Vraag:</strong> Hoe kan ik een product bestellen?<br><strong>Antwoord:</strong> Momenteel tonen we alleen producten en verkopen we niets.</p>
+        <p><strong>Vraag:</strong> Leveren jullie ook internationaal?<br><strong>Antwoord:</strong> Ja, we verzenden wereldwijd! De levertijden en kosten verschillen per land.</p>
+        <p><strong>Vraag:</strong> Is mijn betaling veilig?<br><strong>Antwoord:</strong> Ja, we gebruiken geavanceerde encryptie en werken met betrouwbare betalingsproviders om de veiligheid van je gegevens te garanderen.</p>
+        <p><strong>Vraag:</strong> Kan ik mijn product retourneren als ik niet tevreden ben?<br><strong>Antwoord:</strong> Ja! Je kunt je bestelling binnen 14 dagen na ontvangst retourneren, mits het product ongebruikt en in de originele verpakking zit.</p>
+        <p><strong>Vraag:</strong> Hoe werkt de garantie op jullie producten?<br><strong>Antwoord:</strong> Op al onze producten geldt minimaal 12 maanden garantie. Als er een defect optreedt door fabricagefouten, neem dan contact op met onze klantenservice.</p>
+        <p><strong>Vraag:</strong> Bieden jullie kortingen of promoties aan?<br><strong>Antwoord:</strong> Ja! We hebben regelmatig aanbiedingen en exclusieve deals voor nieuwsbriefabonnees. Schrijf je in om op de hoogte te blijven!</p>
+    </div>
+    
+    <div id="products" class="content">
         <h1>Producten</h1>
+        <p>Bekijk onze nieuwste auto-accessoires!</p>
         <div class="product-container">
             <div class="product">
-                <img src="https://via.placeholder.com/300x200?text=Smart+Dashcam+Pro" alt="Smart Dashcam Pro">
+                <img src="https://raw.githubusercontent.com/Blf12345/AutoGadgets-Hub/a55cd109fb55d9c5d9de9f636ebf87dae016e788/32A4E8BC-2506-4FB6-B9EC-4D597665E448.jpeg" alt="Smart Dashcam Pro">
                 <h2>Smart Dashcam Pro</h2>
-                <button class="buy-button" onclick="addToCart('Smart Dashcam Pro')">Toevoegen aan winkelwagen</button>
+                <p>Een geavanceerde dashcam met AI-detectie die automatisch ongelukken opneemt en waarschuwingen geeft.</p>
+                <button class="buy-button">Toevoegen aan winkelwagen</button>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300x200?text=Draadloze+Auto-oplader" alt="Draadloze Auto-oplader">
+                <img src="https://raw.githubusercontent.com/Blf12345/AutoGadgets-Hub/refs/heads/main/816A3EA4-008D-4EDB-AC21-0CD69035160D.jpeg" alt="Draadloze Auto-oplader">
                 <h2>Draadloze Auto-oplader met MagSafe</h2>
-                <button class="buy-button" onclick="addToCart('Draadloze Auto-oplader')">Toevoegen aan winkelwagen</button>
+                <p>Een magnetische telefoonhouder en oplader die je smartphone veilig op zijn plaats houdt tijdens het rijden.</p>
+                <button class="buy-button">Toevoegen aan winkelwagen</button>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300x200?text=LED+Ambiance+Verlichting" alt="LED Ambiance Verlichting">
+                <img src="https://raw.githubusercontent.com/Blf12345/AutoGadgets-Hub/refs/heads/main/94298423-DFAA-469B-A900-3D1E467908DD.jpeg" alt="LED Ambiance Verlichting">
                 <h2>LED Ambiance Verlichting</h2>
-                <button class="buy-button" onclick="addToCart('LED Ambiance Verlichting')">Toevoegen aan winkelwagen</button>
+                <p>RGB LED-strips voor in de auto, waarmee je de binnenverlichting kunt aanpassen aan je stemming.</p>
+                <button class="buy-button">Toevoegen aan winkelwagen</button>
             </div>
         </div>
+    </div>
+    
+    <div id="contact" class="content">
+        <h1>Contact</h1>
+        <p>Email: info@autogadgetshub.com</p>
+        <p>Telefoon: 012-3456789</p>
     </div>
 </body>
 </html>
