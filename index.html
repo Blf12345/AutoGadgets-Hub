@@ -40,7 +40,7 @@
         }
         .product-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             justify-content: center;
             padding: 20px;
@@ -87,7 +87,7 @@
                 align-items: center;
             }
             .product-container {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -121,6 +121,14 @@
                 <img src="https://raw.githubusercontent.com/Blf12345/AutoGadgets-Hub/a55cd109fb55d9c5d9de9f636ebf87dae016e788/32A4E8BC-2506-4FB6-B9EC-4D597665E448.jpeg" alt="Smart Dashcam Pro">
                 <h2>Smart Dashcam Pro</h2>
                 <p>Een geavanceerde dashcam met AI-detectie die automatisch ongelukken opneemt en waarschuwingen geeft.</p>
+                <label for="dashcam-color">Kies een kleur:</label>
+                <select id="dashcam-color">
+                    <option value="black">Zwart</option>
+                    <option value="white">Wit</option>
+                    <option value="red">Rood</option>
+                    <option value="blue">Blauw</option>
+                    <option value="green">Groen</option>
+                </select>
                 <button class="buy-button">Toevoegen aan winkelwagen</button>
             </div>
             <div class="product">
@@ -133,15 +141,56 @@
                 <img src="https://raw.githubusercontent.com/Blf12345/AutoGadgets-Hub/refs/heads/main/94298423-DFAA-469B-A900-3D1E467908DD.jpeg" alt="LED Ambiance Verlichting">
                 <h2>LED Ambiance Verlichting</h2>
                 <p>RGB LED-strips voor in de auto, waarmee je de binnenverlichting kunt aanpassen aan je stemming.</p>
+                <label for="led-length">Kies een lengte:</label>
+                <select id="led-length">
+                    <option value="5m">5m</option>
+                    <option value="10m">10m</option>
+                    <option value="15m">15m</option>
+                    <option value="20m">20m</option>
+                    <option value="25m">25m</option>
+                </select>
                 <button class="buy-button">Toevoegen aan winkelwagen</button>
-            </div>
-            <div class="product special-product">
+                        </div>
+        <div class="product special-product">
                 <img src="https://raw.githubusercontent.com/Blf12345/AutoGadgets-Hub/refs/heads/main/B39A59E7-8C3C-4A8C-AAAB-E93840856CB9.webp" alt="AutoGadgets Expert Cursus">
                 <h2>AutoGadgets Expert Cursus</h2>
                 <p>Leer hoe je net als wij een expert wordt in auto-gadgets! Volg onze exclusieve cursus en ontdek de geheimen van ons succes.</p>
                 <button class="buy-button">Toevoegen aan winkelwagen</button>
             </div>
         </div>
+    </div>
+    <div id="home" class="content">
+        <h1>Welkom bij AutoGadgets Hub</h1>
+        <p>Niet blij met uw skere auto? Bij ons kunt u terecht voor leuke auto-gadgets! Maak ze aangenamer met bijvoorbeeld verlichting, een dashcam, en nog veel meer, allemaal voor een aanvaardbare prijs!</p>
+    </div>
+    
+    <div id="about" class="content">
+        <h1>Over ons</h1>
+        <p>AutoGadgets Hub biedt de nieuwste technologieën en accessoires voor jouw auto. Van een simpele dashcam tot sfeervolle autoverlichting, bij ons vindt u alles. Topkwaliteit voor realistische prijzen met een oog op de klant. Onze winkel biedt exact wat u nodig hebt. Met variabele leveringsopties zorgen we voor de ideale gelegenheid voor de klant.</p>
+    </div>
+    
+    <div id="team" class="content">
+        <h1>Wie zijn wij?</h1>
+        <p>Ons super-team heeft de afgelopen maanden speciaal voor u met hand en tand aan Autogadgets.com gewerkt. Met dank aan mister A. Soliman, die ons bijeen heeft gebracht. Onze promoter, mister I. Hernandez en tenslotte de marktheersers, heren O. Sigua en natuurlijk L. Bellefroid.<br><br>
+        Wij hopen u een informatieve en hulpvolle ervaring te bieden. U kunt ons ten alle tijden bereiken via het volgende nummer of email:<br>
+        <strong>+32 493 85 31</strong><br>
+        <strong>Autogadgets@help.com</strong></p>
+    </div>
+    
+    <div id="faq" class="content">
+        <h1>FAQ</h1>
+        <p><strong>Vraag:</strong> Hoe kan ik een product bestellen?<br><strong>Antwoord:</strong> Momenteel tonen we alleen producten en verkopen we niets.</p>
+        <p><strong>Vraag:</strong> Leveren jullie ook internationaal?<br><strong>Antwoord:</strong> Ja, we verzenden wereldwijd! De levertijden en kosten verschillen per land.</p>
+        <p><strong>Vraag:</strong> Is mijn betaling veilig?<br><strong>Antwoord:</strong> Ja, we gebruiken geavanceerde encryptie en werken met betrouwbare betalingsproviders om de veiligheid van je gegevens te garanderen.</p>
+        <p><strong>Vraag:</strong> Kan ik mijn product retourneren als ik niet tevreden ben?<br><strong>Antwoord:</strong> Ja! Je kunt je bestelling binnen 14 dagen na ontvangst retourneren, mits het product ongebruikt en in de originele verpakking zit.</p>
+        <p><strong>Vraag:</strong> Hoe werkt de garantie op jullie producten?<br><strong>Antwoord:</strong> Op al onze producten geldt minimaal 12 maanden garantie. Als er een defect optreedt door fabricagefouten, neem dan contact op met onze klantenservice.</p>
+        <p><strong>Vraag:</strong> Bieden jullie kortingen of promoties aan?<br><strong>Antwoord:</strong> Ja! We hebben regelmatig aanbiedingen en exclusieve deals voor nieuwsbriefabonnees. Schrijf je in om op de hoogte te blijven!</p>
+    </div>
+    
+    <div id="contact" class="content">
+        <h1>Contact</h1>
+        <p>Email: info@autogadgetshub.com</p>
+        <p>Telefoon: 012-3456789</p>
     </div>
     <div id="home" class="content">
         <h1>Welkom bij AutoGadgets Hub</h1>
